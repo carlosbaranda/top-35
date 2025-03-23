@@ -52,7 +52,7 @@ st.subheader("📉 Top Caída por Periodo")
 
 def obtener_peores(df, columna):
     if columna in df.columns:
-        return df.sort_values(columna, ascending=True).head(5)[["Ticker", "Nombre", columna]]
+        return df.sort_values(columna, ascending=True).head(top_n)[["Ticker", "Nombre", columna]]
     return pd.DataFrame()
 
 col_down_dia = obtener_peores(df, "Cambio Día (%)")
